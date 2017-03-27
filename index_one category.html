@@ -31,7 +31,7 @@ var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
 var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	
+
 d3.csv("one+category+-+multi+cities.csv", function(error, data) {
 //    console.log(data.map(function(d) { return d.max_i; }));
 //});
@@ -46,7 +46,7 @@ d3.csv("one+category+-+multi+cities.csv", function(error, data) {
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x))
-	  .selectAll("text")  
+	  .selectAll("text")
            .style("text-anchor", "end")
            .attr("dx", "-.8em")
            .attr("dy", ".15em")
@@ -60,7 +60,7 @@ d3.csv("one+category+-+multi+cities.csv", function(error, data) {
       .attr("dy", "0.71em")
       .attr("fill", "#000")
       .text("Pd District");
-	  
+
   g.append("g")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(y)/*.ticks(10, "%")*/)
@@ -70,7 +70,7 @@ d3.csv("one+category+-+multi+cities.csv", function(error, data) {
       .attr("dy", "0.71em")
       .attr("fill", "#000")
       .text("Count of Incidnt Num");
-    
+
 
   g.selectAll(".bar")
     .data(data)
